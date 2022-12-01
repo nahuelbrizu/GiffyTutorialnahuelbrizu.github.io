@@ -1,0 +1,11 @@
+{
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "warning",
+        "info",
+        "hint"
+    ],
+    "errorLens.enableOnDiffView": true,
+    "errorLens.scrollbarHackEnabled": true,
+    "errorLens.statusBarMessageEnabled": true
+}
