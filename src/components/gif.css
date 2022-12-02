@@ -5,7 +5,7 @@
   }
   
   .Gif-buttons {
-    position: absolute;
+    position: flex;
     top: 8px;
     right: 8px;
     z-index: 1;

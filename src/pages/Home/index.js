@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "wouter";
-import ListOfGifs from "../../components/listOfGifs";
-import {useGifs} from '../../hooks/useGifs'
+import { useLocation } from "wouter";
+import ListOfGifs from "components/listOfGifs";
+import { useGifs } from 'hooks/useGifs'
+import TrendingSearches from "components/TrendingSearches"
+import Spinner from "components/spinner";
 
-const POP_GIFS = ["Matrix", "Avengers", "simpsons", "argentina", "walking", "morty", "rick", "pepsi"]
 
 export default function Home() {
     const [keyword, setKeyword] = useState('')
     const [path, pushLocation] = useLocation()
-    const {loading, gifs} = useGifs({ keyword: null })
-    
+    const { loading, gifs } = useGifs({ keyword: null })
+
 
     const handleSubmit = evt => {
         evt.preventDefault()
@@ -19,7 +20,7 @@ export default function Home() {
         setKeyword(evt.target.value)
     }
 
-    if(loading) return <h3>loading...</h3>
+    if (loading) return <Spinner/>
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -35,18 +36,14 @@ export default function Home() {
                     value="Buscar"
                 />
             </form>
-            <h3 className="App-title"> Los Gifs Recien Buscados</h3>
-                 <ListOfGifs gifs={gifs}/>
-            <h3 className="App-title"> Los Gifs más Populares</h3>
-            <ul>
-                {POP_GIFS.map(popularGif => (
-                    <li key={popularGif}>
-                        <Link to={`/search/${popularGif}`}>
-                             Gifs de {popularGif}
-                        </Link>
-                    </li>
-                ))
-                }
-            </ul>
+            <div className="App-main">
+                <div className="App-results">
+                    <h3 className="App-title"> Los Gifs Recien Buscados</h3>
+                    <ListOfGifs gifs={gifs} />
+                </div>
+            </div>
+            <div className="App-category">
+                    <TrendingSearches />
+            </div>
         </>)
 }

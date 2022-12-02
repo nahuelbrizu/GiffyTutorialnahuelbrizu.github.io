@@ -5,13 +5,13 @@
   --theme-body-txt: #f3f3f3;
   --search-size-mx-h: 3rem;
   --zIndex-header: 20;
-  --zIndex-component: 5;
-  --brand-color_1: #00ff99;
-  --brand-color_2: #00ccff;
-  --brand-color_3: #9933ff;
-  --brand-color_4: tomato;
-  --brand-color_5: #fff35c;
-  --brand-color_6: #8429de;
+  --zIndex-component: 6;
+  --brand-color_1: #00ccff;
+  --brand-color_2: #0026ff;
+  --brand-color_3: #62ff00;
+  --brand-color_4: #d80000;
+  --brand-color_5: #ffffff;
+  --brand-color_6: #431e68;
 }
 
 html {
@@ -27,7 +27,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: var(--fz);
@@ -36,12 +36,11 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-
-a {
+Link {
   color: #09f;
   font-size: 32px;
   text-decoration: none;
@@ -51,8 +50,13 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  
 }
 
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
 
 /* -------------------- rf-layout  - Component / header */
 .o-header {

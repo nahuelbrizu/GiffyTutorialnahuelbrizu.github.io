@@ -8,10 +8,14 @@ export default function SearchResults ({ params }) {
 
     return <div>
         {
-            loading ? <loading /> : 
+            loading ? <h1> loading...</h1> : 
+            <>
+            <h3 className="App-title">
+                {decodeURI(keyword)}
+            </h3>
             <ListOfGifs gifs={gifs} />
+            </>
         }
-       
     </div>
 
 }
